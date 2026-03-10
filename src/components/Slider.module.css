@@ -8,36 +8,93 @@
 }
 
 .slider {
+  --slider-progress: 50%;
   appearance: none;
   width: 100%;
-  height: 8px;
+  height: 10px;
   border-radius: 999px;
   border: 1px solid #0f1318;
-  background: linear-gradient(90deg, #111519, #38414c);
+  background: linear-gradient(
+    90deg,
+    #7f9ab0 0%,
+    #7f9ab0 var(--slider-progress),
+    #1a1f26 var(--slider-progress),
+    #38414c 100%
+  );
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.06),
     inset 0 -2px 3px rgba(0, 0, 0, 0.86);
+  cursor: pointer;
+  touch-action: pan-y;
+  transition: filter 120ms ease, box-shadow 120ms ease;
+}
+
+.slider:focus-visible {
+  outline: 2px solid #7fc2ff;
+  outline-offset: 2px;
+}
+
+.slider:hover {
+  filter: brightness(1.04);
+}
+
+.slider:active {
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.05),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.9);
 }
 
 .slider::-webkit-slider-thumb {
   appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1px solid #0f1115;
   background: radial-gradient(circle at 30% 30%, #d6dde4, #5f6872 60%, #2d343b);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
     0 2px 3px rgba(0, 0, 0, 0.52);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  cursor: grab;
 }
 
 .slider::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1px solid #0f1115;
   background: radial-gradient(circle at 30% 30%, #d6dde4, #5f6872 60%, #2d343b);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
     0 2px 3px rgba(0, 0, 0, 0.52);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  cursor: grab;
+}
+
+.slider:active::-webkit-slider-thumb {
+  transform: scale(1.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.52);
+  cursor: grabbing;
+}
+
+.slider:active::-moz-range-thumb {
+  transform: scale(1.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.52);
+  cursor: grabbing;
+}
+
+@media (pointer: coarse) {
+  .slider::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+  }
 }

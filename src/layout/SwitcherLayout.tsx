@@ -36,8 +36,8 @@ export default function SwitcherLayout() {
       </section>
 
       <section className={styles.knobArea}>
-        <Knob label="Menu" angle={-50} />
-        <Knob label="Trim" angle={25} />
+        <Knob label="Menu" value={31} />
+        <Knob label="Trim" value={59} />
       </section>
 
       <section className={styles.metersRight}>
