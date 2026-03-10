@@ -1,0 +1,93 @@
+.panel {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1.2rem;
+  border-radius: 18px;
+  border: 1px solid var(--panel-border);
+  background: linear-gradient(160deg, var(--panel-bg-start), var(--panel-bg-end));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.52),
+    0 4px 10px rgba(0, 0, 0, 0.42);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 140px 1fr 220px 140px;
+  grid-template-areas: 'metersLeft controls knobs metersRight';
+}
+
+.metersLeft,
+.metersRight {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+
+.metersLeft {
+  grid-area: metersLeft;
+}
+
+.controls {
+  grid-area: controls;
+  border-radius: 14px;
+  padding: 1rem;
+  border: 1px solid #11151a;
+  background: linear-gradient(180deg, #303842, #1a1f26);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.66),
+    0 2px 0 rgba(9, 11, 14, 0.9);
+  display: grid;
+  gap: 1rem;
+}
+
+.ledRow {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.buttonMatrix {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.sliderRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.knobArea {
+  grid-area: knobs;
+  display: grid;
+  place-content: center;
+  gap: 1.1rem;
+  border-radius: 14px;
+  border: 1px solid #11151a;
+  background: linear-gradient(185deg, #323b46, #181d24);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.62),
+    0 2px 0 rgba(9, 11, 14, 0.9);
+}
+
+.metersRight {
+  grid-area: metersRight;
+}
+
+@media (max-width: 980px) {
+  .panel {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'controls'
+      'knobs'
+      'metersLeft'
+      'metersRight';
+  }
+
+  .metersLeft,
+  .metersRight {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

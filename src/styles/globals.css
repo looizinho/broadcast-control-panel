@@ -1,0 +1,21 @@
+@import './variables.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(124, 142, 162, 0.2), transparent 35%),
+    radial-gradient(circle at 85% 10%, rgba(84, 99, 120, 0.3), transparent 30%),
+    linear-gradient(140deg, #14181d, #0e1013 60%, #080a0c);
+}

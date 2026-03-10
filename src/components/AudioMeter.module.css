@@ -1,0 +1,77 @@
+.meterCard {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #11151a;
+  background: linear-gradient(180deg, #39414b, #1a1f25);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.78),
+    0 2px 0 rgba(8, 10, 13, 0.9),
+    0 4px 6px rgba(0, 0, 0, 0.38);
+}
+
+.meterCard::before {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 2px;
+  height: 24%;
+  border-radius: 7px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.label,
+.value {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.track {
+  position: relative;
+  width: 15px;
+  height: 126px;
+  border-radius: 999px;
+  padding: 2px;
+  display: flex;
+  align-items: flex-end;
+  background:
+    repeating-linear-gradient(
+      to top,
+      rgba(220, 230, 240, 0.2) 0 1px,
+      rgba(220, 230, 240, 0) 1px 9px
+    ),
+    linear-gradient(180deg, #0d1116, #2a313a);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.08),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.85);
+}
+
+.track::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: 38%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.fill {
+  width: 100%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ff3d49 0%, #ff8a2a 25%, #ffd94a 52%, #47ef87 82%, #19d96d 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 0 4px rgba(71, 239, 135, 0.35);
+}

@@ -1,0 +1,12 @@
+:root {
+  --panel-bg-start: #3f464e;
+  --panel-bg-end: #1c2025;
+  --panel-border: #171a1f;
+  --chrome: #2a3037;
+  --chrome-light: #4f5761;
+  --text-main: #dde2e8;
+  --accent-red: #ee4f55;
+  --accent-green: #30d86a;
+  --accent-yellow: #f2cc43;
+  --accent-blue: #63a9ff;
+}
