@@ -21,12 +21,12 @@ export default function SwitcherLayout() {
         </header>
 
         <div className={styles.buttonMatrix}>
-          <Button label="CAM 1" variant="program" active />
-          <Button label="CAM 2" variant="program" />
-          <Button label="CAM 3" variant="preview" />
-          <Button label="MEDIA" variant="preview" />
-          <Button label="KEY 1" />
-          <Button label="KEY 2" />
+          <Button label="O PEDRO" variant="program" active />
+          <Button label="Linha do Tempo" variant="program" />
+          <Button label="Multiplique-se" variant="preview" />
+          <Button label="O Pedro" variant="preview" />
+          <Button label="Linha do Tempo" />
+          <Button label="Multiplique-se" />
         </div>
 
         <div className={styles.sliderRow}>
